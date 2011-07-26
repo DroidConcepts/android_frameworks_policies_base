@@ -497,6 +497,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     if (uid >= Process.FIRST_APPLICATION_UID && uid <= Process.LAST_APPLICATION_UID
                         && appInfo.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
                         // Kill the entire pid
+                        Toast.makeText(mContext, R.string.app_killed_message, Toast.LENGTH_SHORT).show();
                         Process.killProcess(appInfo.pid);
                         break;
                     }
